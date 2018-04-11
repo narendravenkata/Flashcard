@@ -7,6 +7,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import App from './components/App';
 import Stack from './components/Stack';
 import { setStack } from './actions';
+import StackForm from './components/StackForm';
+import './index.css';
 
 const store = createStore(roorReducer);
 store.subscribe(() => console.log("store", store.getState()));
@@ -17,6 +19,7 @@ ReactDOM.render(
             <Switch>
                 <Route path='/' exact component={App} />
                 <Route path='/stack' exact component={Stack} />
+                <Route path='/stack_form' exact component={StackForm} />
             </Switch>
         </BrowserRouter>
     </Provider>

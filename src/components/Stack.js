@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import Card from './Card';
+
 class Stack extends Component {
     render() {
         const { title, cards } = this.props.stack;
         return (
             <div>
-                <Link to='/'>Home</Link>
+                <Link className='link-home' to='/'>
+                    <h4>Home</h4></Link>
                 <h3>
                     {title}
                 </h3>
@@ -16,9 +19,9 @@ class Stack extends Component {
                     cards.map(
                         card => {
                             return (
-                                <div key={card.id}>
-                                    {card.prompt}
-                                </div>
+                                <Card key={card.id} card={card}>
+
+                                </Card>
                             )
                         }
                     )
@@ -30,7 +33,7 @@ class Stack extends Component {
 
 function mapStateToProps(state) {
     return {
-        stack: state
+        stack: state.stack
     }
 }
 
