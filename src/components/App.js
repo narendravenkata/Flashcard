@@ -9,7 +9,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h2>Flashcard Pro</h2>
+                <h2>Flashcard</h2>
                 <hr />
                 <StackList />
                 <hr />

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import roorReducer from './reducers';
+import rootReducer from './reducers';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import App from './components/App';
 import Stack from './components/Stack';
@@ -10,7 +10,7 @@ import { setStack } from './actions';
 import StackForm from './components/StackForm';
 import './index.css';
 
-const store = createStore(roorReducer);
+const store = createStore(rootReducer);
 store.subscribe(() => console.log("store", store.getState()));
 store.dispatch(setStack({ id: 0, title: 'example', cards: [] }));
 ReactDOM.render(
